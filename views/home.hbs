@@ -1,1 +1,8 @@
-<h1>hello world</h1>
+<a href="/posts/new">new post</a>
+
+{{#each post}}
+<div class="post">
+    <h1>{{this.title}}</h1>
+    <p>{{this.body}}</p>
+</div>
+{{/each}}

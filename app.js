@@ -3,21 +3,25 @@
 const express = require('express')
 const app = express()
 const exphbs = require("express-handlebars");
+const bodyParser = require("body-parser");
+const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 //middleware
 
 app.engine('.hbs', exphbs({extname: '.hbs', defaultLayout: 'main'}));
 app.set('view engine', '.hbs');
+app.use(express.static(__dirname + '/public'));
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/contractor-project');
 
 
 
 
 //routes
 
-app.get('/', (req, res) => {
-    res.render('home')
-})
+posts = require('./controllers/posts.js')(app)
 
-app.listen(3000, () => {
-    console.log('App listening on port 3000!')
-})
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`app listening on port ${port}`);
+});
