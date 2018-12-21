@@ -1,0 +1,7 @@
+<a href="/">back</a>
+<h1>{{post.title}}</h1>
+<p>{{post.body}}</p>
+<a href="/posts/{{post._id}}/edit">edit</a>
+<form method="POST" action="/posts/{{post._id}}?_method=DELETE">
+    <button type="submit">delete</button>
+</form>

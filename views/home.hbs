@@ -1,8 +1,9 @@
 <a href="/posts/new">new post</a>
 
-{{#each post}}
+{{#each posts}}
 <div class="post">
     <h1>{{this.title}}</h1>
     <p>{{this.body}}</p>
+    <a href="/posts/{{this._id}}"><p>view</p></a>
 </div>
 {{/each}}

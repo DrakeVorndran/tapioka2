@@ -1,13 +1,7 @@
 
 <div class="new-post">
     <form method="POST" action="/posts">
-        <input name="title" type="text" placeholder="Title">
-        <input name="body" type="text" placeholder="Body">
-        <!-- BUTTON -->
-        <div class="form-group">
-            <button type="submit">Post</button>
-
-        </div>
+        {{>post-form}}
     </form>
     <a href="/"><button>Cancel</button></a>
 

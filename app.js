@@ -13,8 +13,8 @@ app.engine('.hbs', exphbs({extname: '.hbs', defaultLayout: 'main'}));
 app.set('view engine', '.hbs');
 app.use(express.static(__dirname + '/public'));
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/contractor-project');
-
-
+app.use(methodOverride("_method"));
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 //routes
